@@ -1,18 +1,30 @@
-## Getting Started
+# 学生成绩管理系统
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+## 实验指导书
 
-## Folder Structure
+### 一．实验题目
 
-The workspace contains two folders by default, where:
+实验三  学生成绩管理系统设计
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+### 二．实验目的
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+本实验的目的是让学生：
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+1. 掌握java的类与对象的基本概念；
+2. 掌握简单的信息管理系统的设计与实现。
 
-## Dependency Management
+### 三．实验要求
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+1. 实现定义学生成绩记录，记录包括字段有：学生姓名、学号、课程名称、成绩。
+2. 实现查看学生成绩单功能，能显示所有学生成绩记录；
+3. 实现添加学生成绩记录功能，输入某位学生某门课的成绩，能保存到成绩表里面；
+4. 实现修改学生成绩记录功能，根据学生学号修改课程成绩；
+5. 实现删除学生成绩记录功能，根据学生学号删除课程成绩；
+6. 实现统计某门课平均分、最高分和最低分的功能；
+7. 实现查找某位学生成绩功能，根据学生学号显示该学生的成绩；
+8. 实现按成绩从高往低排序，并输出。
+
+## 参考项目
+
+@ZenGx1n
+[student-score-manage](https://github.com/ZenGx1n/student-score-manage)
