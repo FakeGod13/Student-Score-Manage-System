@@ -10,23 +10,6 @@ public class ScoreList {
 
     Scanner input = new Scanner(System.in);
 
-    public void add() {
-        if (length >= maxLength) {
-            System.out.println("列表容量不足添加失败！");
-            return;
-        }
-        System.out.println("请录入成绩信息！");
-        System.out.print("课程名称: ");
-        list[length].setCourseName(input.next());
-        System.out.print("学生姓名: ");
-        list[length].setStudentName(input.next());
-        System.out.print("学生学号: ");
-        list[length].setStudentID(input.next());
-        System.out.print("分数: ");
-        list[length].setScore(input.nextDouble());
-        length++;
-    }
-
     public void showList() {
         System.out.printf("%-s", "课程名称");
         System.out.printf("%-10s", "学生姓名");
@@ -39,6 +22,59 @@ public class ScoreList {
             System.out.printf("%-10.1ld", list[i].getScore());
             System.out.print("\n");
         }
+    }
+
+    public void add() {
+        if (length >= maxLength) {
+            System.out.println("列表容量不足添加失败！");
+            return;
+        }
+        System.out.println("请录入信息！");
+        System.out.print("课程名称: ");
+        list[length].setCourseName(input.next());
+        System.out.print("学生姓名: ");
+        list[length].setStudentName(input.next());
+        System.out.print("学生学号: ");
+        list[length].setStudentID(input.next());
+        System.out.print("分数: ");
+        list[length].setScore(input.nextDouble());
+        length++;
+    }
+
+    public void set() {
+        System.out.print("请输入需要修改的学生学号：");
+        String inputID = input.next();
+        System.out.print("请输入需要修改的课程：");
+        String inputCourseName = input.next();
+        for (int i = 0; i < length; i++) {
+            if (inputID.equals(list[i].getStudentID()) &&
+                    inputCourseName.equals(list[i].getCourseName())) {
+                System.out.println("请录入信息！");
+                System.out.print("分数");
+                list[i].setScore(input.nextDouble());
+                System.out.println("修改成功！");
+                return;
+            }
+        }
+        System.out.println("查无此人，修改失败！");
+    }
+
+    public void delete() {
+        System.out.print("请输入需要删除信息的学生学号：");
+        String inputID = input.next();
+        System.out.print("请输入需要删除的课程：");
+        String inputCourseName = input.next();
+        for (int i = 0; i < length; i++) {
+            if (inputID.equals(list[i].getStudentID()) &&
+                    inputCourseName.equals(list[i].getCourseName())) {
+                for (int j = 0; i + j < length - 1; j++) {
+                    list[i+j] = list[i+j+1];
+                }
+                System.out.println("删除成功！");
+                return;
+            }
+        }
+        System.out.println("查无此人，删除失败！");
     }
 
     public void sort() {
