@@ -1,6 +1,6 @@
 package ScoreList;
 
-public class Score implements Comparable<Score> {
+public class Score {
     String studentID;
     String studentName;
     String courseName;
@@ -36,10 +36,5 @@ public class Score implements Comparable<Score> {
 
     public void setStudentID(String studentID) {
         this.studentID = studentID;
-    }
-
-    @Override
-    public int compareTo(Score o) {
-        return o.score > this.score ? 1 : -1;
     }
 }
